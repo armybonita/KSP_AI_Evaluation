@@ -1,0 +1,53 @@
+{
+  "name": "aieas-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "migrate": "tsx scripts/migrate.ts",
+    "prepare:quote-cache": "tsx scripts/prepare-quote-cache.ts",
+    "start": "next start",
+    "lint": "next lint --no-cache",
+    "typecheck": "tsc --noEmit",
+    "test:unit": "vitest run",
+    "it": "vitest run --config vitest.it.config.ts",
+    "check:boundary": "node scripts/boundary-check.mjs",
+    "build:fixtures": "tsx fixtures/build.ts",
+    "seed": "tsx scripts/seed-dev.ts",
+    "receipt": "node scripts/test-receipt.mjs",
+    "e2e": "node scripts/run-e2e.mjs",
+    "e2e:journey": "node scripts/run-e2e.mjs tests/e2e/journey-1-7.spec.ts",
+    "verify": "npm run lint && npm run typecheck && npm run test:unit && npm run check:boundary && rm -rf .next"
+  },
+  "dependencies": {
+    "@rhwp/core": "0.8.7",
+    "better-sqlite3": "13.0.3",
+    "docx": "^9.9.0",
+    "js-yaml": "^4.3.2",
+    "jszip": "3.10.2",
+    "next": "15.2.1",
+    "pdf-lib": "1.17.1",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "undici": "6.21.1",
+    "unpdf": "1.8.1",
+    "word-extractor": "1.0.4",
+    "zod": "3.24.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@types/better-sqlite3": "7.6.12",
+    "@types/node": "22.13.10",
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4",
+    "autoprefixer": "10.4.20",
+    "eslint": "9.21.0",
+    "eslint-config-next": "15.2.1",
+    "postcss": "8.5.3",
+    "tailwindcss": "3.4.17",
+    "tsx": "4.19.3",
+    "typescript": "5.8.2",
+    "vitest": "3.0.7"
+  }
+}

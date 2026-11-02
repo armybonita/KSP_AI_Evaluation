@@ -1,0 +1,12 @@
+{
+  "fileName": "가상-사업-원문.md",
+  "paragraphs": [
+    { "location": "¶1", "content": "가상의 앞 문단입니다." },
+    { "location": "¶2", "content": "가상 기관은 3건의 교육을 진행했다." },
+    { "location": "¶3", "content": "가상의 뒤 문단입니다." }
+  ],
+  "quote": "가상 기관은 3건의 교육을 진행했다.",
+  "fabricatedQuote": "가상 기관은 9건의 교육을 진행했다.",
+  "manualSentence": "가상 기관은 4건의 교육을 진행했다.",
+  "bigram": { "quote": "가가가", "paragraph": "가가", "expectedPercent": 50 }
+}

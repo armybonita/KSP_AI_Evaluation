@@ -1,0 +1,23 @@
+/** Extend an independent synthetic benchmark DB and assert the screen reaches each case. */
+import assert from 'node:assert/strict';
+import { addRiskBranches } from './benchmark-risk-branches';
+import { getReviewData, openDatabase } from './db';
+import { getNoteReviewData } from './note-review';
+const path = process.argv[2];
+if (!process.env.TMPDIR || !path?.startsWith(`${process.env.TMPDIR}/`)) throw new Error('synthetic copy under TMPDIR required');
+const db = openDatabase(path);
+if (process.argv[3] !== 'verify') addRiskBranches(db);
+const review = getReviewData('project-0', db);
+assert(review);
+const evidences = review.indicators.flatMap(i => i.suggestion?.evidences ?? []);
+const missing = evidences.filter(e => e.id === 'risk-unmatched' && !e.paragraph_context);
+const duplicate = evidences.filter(e => e.id === 'risk-duplicate-evidence' && e.paragraph_context?.target.id === 'risk-target');
+const table = duplicate.filter(e => e.paragraph_context?.target.table_index === 1 && e.paragraph_context.target.table_row === 1 && e.paragraph_context.target.table_col === 1);
+const across = duplicate.filter(e => e.paragraph_context?.previous?.content.includes('[인용 금지 문장]') && e.paragraph_context.target.content.includes('[인용 금지 문장]') && e.paragraph_context.next?.content.includes('[인용 금지 문장]'));
+assert.equal(missing.length, 1); assert.equal(duplicate.length, 1); assert.equal(table.length, 1); assert.equal(across.length, 1);
+assert.equal((db.prepare('SELECT count(*) AS n FROM paragraphs WHERE document_id = ? AND location = ?').get('risk-doc', '가상 중복 위치') as { n: number }).n, 2);
+const notes = getNoteReviewData('project-0', db);
+const metadata = notes.items.flatMap(i => i.evidence).filter(e => e.id === 'risk-snippet' && e.level === '가상 등급' && e.speaker === '가상 작성자');
+assert.equal(metadata.length, 1);
+console.log(JSON.stringify({ missing: missing.length, duplicate: duplicate.length, table: table.length, across: across.length, metadata: metadata.length }));
+db.close();
