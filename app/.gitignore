@@ -1,0 +1,22 @@
+
+# E2E seed DB and SQLite side files
+# Next.js
+# Playwright
+# SQLite files in development / tests
+# TypeScript build info
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite-journal
+*.sqlite3
+*.tsbuildinfo
+.next-e2e/
+.next/
+build/
+dist/
+node_modules/
+out/
+playwright-report/
+test-results/

@@ -1,0 +1,24 @@
+/** Assert that the synthetic benchmark exercises the review branches it claims. */
+import assert from 'node:assert/strict';
+import { openDatabase } from './db';
+import { getNoteReviewData } from './note-review';
+import { getSavedReportDraft, isDraftValid } from '../report/service';
+const path = process.argv[2];
+if (!path || !process.env.TMPDIR || !path.startsWith(`${process.env.TMPDIR}/`)) throw new Error('synthetic database under TMPDIR required');
+const db = openDatabase(path);
+const data = getNoteReviewData('project-0', db);
+const item = (id: string) => data.items.find((row) => row.id === id);
+assert(item('rename-new')?.renamedHistory?.some((h) => h.node_id === 'rename-old'));
+assert(item('split-new-a')?.splitHistory?.some((h) => h.node_id === 'split-old'));
+assert(item('merge-new')?.splitHistory?.length === 2);
+assert(item('uncertain')?.uncertainHistory?.some((h) => h.node_id === 'uncertain'));
+assert(item('node-0')?.splitHistory?.some((h) => h.node_id.startsWith('legacy-branch-')));
+const draft = getSavedReportDraft('project-0', db);
+assert(draft && isDraftValid(draft, 'project-0', db) && draft.sections.achievement_table.rows.length > 0);
+const bans = db.prepare('SELECT count(DISTINCT content) AS count FROM sentences WHERE is_citation_banned = 1').get() as { count: number };
+assert(bans.count >= 40);
+const flagged = db.prepare('SELECT COUNT(*) AS count FROM evidences WHERE is_citation_banned = 1').get() as { count: number };
+const overlapping = db.prepare(`SELECT COUNT(*) AS count FROM paragraphs p JOIN sentences s ON s.paragraph_id = p.id WHERE s.is_citation_banned = 1 AND instr(p.content, s.content) > 0`).get() as { count: number };
+assert(flagged.count > 0 && overlapping.count > 0);
+console.log(`fixture branches verified; distinct bans ${bans.count}; flagged ${flagged.count}; overlapping ${overlapping.count}; draft rows ${draft.sections.achievement_table.rows.length}`);
+db.close();

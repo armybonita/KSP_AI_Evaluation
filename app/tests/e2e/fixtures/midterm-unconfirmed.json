@@ -1,0 +1,12 @@
+{
+  "verdict_status": "미확인",
+  "sentence": "행정 업무 처리 시간 단축 관련 지표 언급이 확인되었습니다.",
+  "evidences": [
+    {
+      "quote": "중기성과 지표: 행정 업무 처리 시간 30% 단축 달성.",
+      "document_id": "doc-02_pdm.docx",
+      "location": "¶4",
+      "speaker": "KDI"
+    }
+  ]
+}

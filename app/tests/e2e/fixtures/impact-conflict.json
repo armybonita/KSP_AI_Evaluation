@@ -1,0 +1,18 @@
+{
+  "verdict_status": "근거 충돌",
+  "sentence": "체감 만족도 지표 수치가 문서마다 상이하여 추가 검토가 필요합니다.",
+  "evidences": [
+    {
+      "quote": "핵심 성과지표로서 행정 시스템 이용 만족도 80% 달성을 최종 목표로 설정한다.",
+      "document_id": "doc-01_project_plan.hwpx",
+      "location": "¶4",
+      "speaker": "KDI"
+    },
+    {
+      "quote": "영향 단계 성과지표로 대국민 전자정부 서비스 체감 만족도 5점 척도 3.5점 달성을 설정함.",
+      "document_id": "doc-02_pdm.docx",
+      "location": "¶3",
+      "speaker": "KDI"
+    }
+  ]
+}

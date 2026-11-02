@@ -1,0 +1,226 @@
+{
+  "project_name": "가상국 디지털 행정 역량 강화 사업",
+  "project_period": "2024.01 - 2026.12",
+  "documents": [
+    {
+      "file_name": "01_project_plan.hwpx",
+      "doc_type": "사업계획서",
+      "is_excluded": false,
+      "excluded_reason": null,
+      "known_sentences": [
+        {
+          "sentence": "본 사업은 가상국 행정 업무 전산화 및 공공 데이터 연계를 목표로 한다.",
+          "expected_sequence": 3,
+          "expected_location": "¶3"
+        },
+        {
+          "sentence": "핵심 성과지표로서 행정 시스템 이용 만족도 80% 달성을 최종 목표로 설정한다.",
+          "expected_sequence": 4,
+          "expected_location": "¶4"
+        }
+      ]
+    },
+    {
+      "file_name": "02_pdm.docx",
+      "doc_type": "성과관리표",
+      "is_excluded": false,
+      "excluded_reason": null,
+      "known_sentences": [
+        {
+          "sentence": "영향 단계 성과지표로 대국민 전자정부 서비스 체감 만족도 5점 척도 3.5점 달성을 설정함.",
+          "expected_sequence": 3,
+          "expected_location": "¶3"
+        },
+        {
+          "sentence": "중기성과 지표: 행정 업무 처리 시간 30% 단축 달성.",
+          "expected_sequence": 4,
+          "expected_location": "¶4"
+        },
+        {
+          "sentence": "단기성과 지표: 디지털 공공 포털 가입자 100만명 확보 달성.",
+          "expected_sequence": 5,
+          "expected_location": "¶5"
+        },
+        {
+          "sentence": "산출물 지표: 통합 플랫폼 1식 개발 완료 및 검수 통과.",
+          "expected_sequence": 6,
+          "expected_location": "¶6"
+        },
+        {
+          "sentence": "활동 지표: 핵심 공무원 500명 이수 완료 달성.",
+          "expected_sequence": 7,
+          "expected_location": "¶7"
+        }
+      ]
+    },
+    {
+      "file_name": "03_trip_report.pdf",
+      "doc_type": "출장결과보고서",
+      "is_excluded": false,
+      "excluded_reason": null,
+      "known_sentences": [
+        {
+          "sentence": "현지 점검 결과: 통합 플랫폼 1식 개발 완료 및 검수 통과 확인됨.",
+          "expected_sequence": 5,
+          "expected_location": "1쪽 ¶5"
+        },
+        {
+          "sentence": "교육 훈련 실적: 핵심 공무원 500명 이수 완료 달성을 현장에서 확인하였음.",
+          "expected_sequence": 7,
+          "expected_location": "2쪽 ¶2"
+        },
+        {
+          "sentence": "면담에 참여한 현지 실무관은 이름을 밝히지 말아 달라고 요청하며 초기 시스템 도입 과정에서 부서 간 이견이 상당했다고 진술함.",
+          "expected_sequence": 8,
+          "expected_location": "2쪽 ¶3"
+        }
+      ]
+    },
+    {
+      "file_name": "04_review_opinion.docx",
+      "doc_type": "심사 의견",
+      "is_excluded": false,
+      "excluded_reason": null,
+      "known_sentences": [
+        {
+          "sentence": "심사위원 검토 의견에 따라 보안성 검토 기준을 보완 반영함.",
+          "expected_sequence": 3,
+          "expected_location": "¶3"
+        }
+      ]
+    },
+    {
+      "file_name": "05_other_project.docx",
+      "doc_type": "기타",
+      "is_excluded": true,
+      "excluded_reason": "다른 사업 자료(이웃국 항만 물류 정보시스템 구축사업)",
+      "known_sentences": [
+        {
+          "sentence": "본 보고서는 이웃국 항만청의 물류 전산화 지원 사업에 대한 최종 완료 결과이다.",
+          "expected_sequence": 3,
+          "expected_location": "¶3"
+        }
+      ]
+    },
+    {
+      "file_name": "06_personal_memo.pdf",
+      "doc_type": "기타",
+      "is_excluded": true,
+      "excluded_reason": "개인 서류(출장 여비 정산 신청서)",
+      "known_sentences": [
+        {
+          "sentence": "항공료 및 숙박비 실비 영수증을 첨부하여 여비 정산을 청구합니다.",
+          "expected_sequence": 3,
+          "expected_location": "1쪽 ¶3"
+        }
+      ]
+    },
+    {
+      "file_name": "07_empty.pdf",
+      "doc_type": "기타",
+      "is_excluded": false,
+      "excluded_reason": null,
+      "read_status": "읽지 못함",
+      "known_sentences": []
+    },
+    {
+      "file_name": "08_irrelevant_note.docx",
+      "doc_type": "기타",
+      "is_excluded": true,
+      "excluded_reason": "무관 문서(사업명과 사업 기간 모두 미언급)",
+      "known_sentences": [
+        {
+          "sentence": "전자기기 반출 시 사전 승인 절차를 준수해야 합니다.",
+          "expected_sequence": 2,
+          "expected_location": "¶2"
+        }
+      ]
+    }
+  ],
+  "performance_pathway": {
+    "impact": {
+      "level": "영향",
+      "name": "대국민 행정 편의 증진",
+      "ovi": "대국민 전자정부 서비스 체감 만족도",
+      "mov": "대국민 설문조사 보고서",
+      "target_value": "5점 척도 3.5점 달성",
+      "conflict_target_value": "80% 달성"
+    },
+    "midterm_outcome": {
+      "level": "중기성과",
+      "name": "행정 효율성 증대",
+      "ovi": "행정 업무 처리 시간 단축률",
+      "mov": "업무 시스템 로그 분석 보고서",
+      "target_value": "행정 업무 처리 시간 30% 단축"
+    },
+    "shortterm_outcome": {
+      "level": "단기성과",
+      "name": "디지털 행정 서비스 이용 확산",
+      "ovi": "디지털 공공 포털 가입자 수",
+      "mov": "포털 운영 실적 통계",
+      "target_value": "가입자 100만명 확보"
+    },
+    "output": {
+      "level": "산출물",
+      "name": "디지털 행정 기반 구축",
+      "ovi": "디지털 행정 공통 플랫폼 구축",
+      "mov": "시스템 인수 검사 확인서",
+      "target_value": "통합 플랫폼 1식 개발 완료"
+    },
+    "activity": {
+      "level": "활동",
+      "name": "공무원 디지털 직무 교육",
+      "ovi": "공무원 대상 디지털 역량 강화 교육",
+      "mov": "교육 수료 대장",
+      "target_value": "핵심 공무원 500명 이수"
+    }
+  },
+  "traps": [
+    {
+      "trap_type": "numeric_conflict",
+      "description": "문서끼리 수치 충돌: 사업계획서(80%) vs 성과관리표(5점 척도 3.5점)",
+      "locations": [
+        { "file_name": "01_project_plan.hwpx", "location": "¶4", "value": "80%" },
+        { "file_name": "02_pdm.docx", "location": "¶3", "value": "5점 척도 3.5점" }
+      ]
+    },
+    {
+      "trap_type": "unsupported_judgment",
+      "description": "근거 없는 판단: 자료에 성과 근거가 없는 지표(디지털 법제 정비율)",
+      "indicator": {
+        "level": "단기성과",
+        "name": "디지털 법제 정비",
+        "ovi": "가상국 디지털 법제 정비율",
+        "target_value": "100% 달성",
+        "expected_verdict": "미확인"
+      }
+    },
+    {
+      "trap_type": "other_project",
+      "description": "다른 사업 자료 섞임: 이웃국 항만 물류 정보시스템 구축사업",
+      "file_name": "05_other_project.docx"
+    },
+    {
+      "trap_type": "personal_document",
+      "description": "개인 서류 섞임: 개인 출장 여비 정산 신청서",
+      "file_name": "06_personal_memo.pdf"
+    },
+    {
+      "trap_type": "do_not_quote",
+      "description": "인용 금지 문장: 이름을 밝히지 말아 달라는 요청 문장 포함",
+      "file_name": "03_trip_report.pdf",
+      "location": "2쪽 ¶3",
+      "sentence": "면담에 참여한 현지 실무관은 이름을 밝히지 말아 달라고 요청하며 초기 시스템 도입 과정에서 부서 간 이견이 상당했다고 진술함."
+    },
+    {
+      "trap_type": "empty_text",
+      "description": "텍스트 없는 파일: 읽지 못함 처리",
+      "file_name": "07_empty.pdf"
+    },
+    {
+      "trap_type": "irrelevant_document",
+      "description": "무관 문서: 사업명과 사업 기간 모두 미언급",
+      "file_name": "08_irrelevant_note.docx"
+    }
+  ]
+}
